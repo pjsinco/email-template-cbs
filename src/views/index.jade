@@ -1,4 +1,5 @@
 include ./includes/data
+include ./includes/v1/mixins
 
 // CONTAINER FOR EMAIL
 table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;")
@@ -14,12 +15,12 @@ table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layou
             // 
             table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;")
               tr
-                td(align="center" style="padding: 10px 10px 10px 10px;")
+                td(align="center")
 
                   // wrapper table
                   table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="600")
                     tr
-                      td(align="center")
+                      td(align="center" style="padding: 10px 10px 10px 10px;")
 
                         // content 
                         table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="100%")
@@ -27,6 +28,8 @@ table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layou
                             td(align="center" style="padding: 15px 0px 15px 0px;")
                               a(href="#" style="font-family: Helvetica, arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 26px; color: #666666; text-decoration: none;" target="_blank")
                                 img(class="fluid-image" border="0" src="http://aoa-mnews.informz.net/aoa-mnews/data/images/cbs/logo-aobr.png" alt="AOBR logo" width="384" height="59" style="display: block; padding: 0; color: #ffffff; font-family: Helvetica, arial, sans-serif; font-size: 16px;")
+
+        include ./includes/v1/banner
 
         tr
           td
@@ -37,32 +40,77 @@ table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layou
                   // wrapper
                   table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="520")
                     tr
-                      td(class="padding" align="left" style="padding: 15px 0px 22px 0px; font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 26px; line-height: 28px;" )
+                      td(class="padding" align="left" style="padding: 22px 0px 22px 0px; font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 21px; line-height: 28px;" )
                         | Dear Dr. Sundstrom,
                         
                     tr
-                      td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 18px; line-height: 26px;" )
+                      td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" )
                         | Please be advised that your Board Certification in Anesthesiology will expire on December 31, 2018.
                     tr
-                      td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 18px; line-height: 26px;" )
+                      td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" )
                         | In addition to the OCC exam, you must complete the following requirements to maintain your board certification:
                     tr
                       td(class="padding")
                         table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="100%")
                           tr
-                            td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 18px; line-height: 26px;" valign="top" width="20")
+                            td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" valign="top" width="20")
                               | 1. 
-                            td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 18px; line-height: 26px;" valign="top")
-                              | Maintain active medical license in any of the 50 US states (will be verified once other components are complete)
+                            td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" valign="top")
+                              | #[span(style="font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: bold; font-size: 16px; line-height: 26px;") Maintain active medical license] in any of the 50 US states (will be verified once other components are complete)
                           tr
-                            td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 18px; line-height: 26px;" valign="top" width="20")
+                            td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" valign="top" width="20")
                               | 2. 
-                            td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 18px; line-height: 26px;" valign="top")
-                              | Complete CME Requirements. #[a(href="https://physicianportal.osteopathic.org/TraCMEReport/DownloadTraCMEReport" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 18px; line-height: 26px;") View your CME report]
+                            td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" valign="top")
+                              | #[span(style="font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: bold; font-size: 16px; line-height: 26px;") Complete CME Requirements.] #[a(href="https://physicianportal.osteopathic.org/TraCMEReport/DownloadTraCMEReport" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;") View your CME report]
                           tr
-                            td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 18px; line-height: 26px;" valign="top" width="20")
+                            td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" valign="top" width="20")
                               | 3. 
-                            td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 18px; line-height: 26px;" valign="top")
-                              | Pass the OCC exam.
+                            td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" valign="top")
+                              | #[span(style="font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: bold; font-size: 16px; line-height: 26px;") Pass the OCC exam.] You are eligible to take the exam in 2017 and 2018.
+
+                    tr
+                      td(align="center" width="300" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: 200; font-size: 16px; line-height: 26px; text-transform: uppercase; letter-spacing: 1px;")
+                        | OCC Exam dates in 2017
+                    tr
+                      td(class="padding" align="center" style="padding: 0px 0px 20px 0px;")
+                        table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="450")
+                          tr
+                            td(align="center" width="300" style="padding: 15px 0px 3px 0px; font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 18px; line-height: 28px;")
+                              | April 3, 2017 &bull; Las Vegas
+                          tr
+                            td(align="center" width="300" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;")
+                              | First application deadline: #[span(style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 16px; line-height: 26px;") Feb. 1, 2017]
+                          tr
+                            td(align="center" width="300" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;")
+                              | Final application deadline: #[span(style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 16px; line-height: 26px;") March 1, 2017]
+                          tr
+                            td(align="center" width="300" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;")
+                              +button('#466687', 'https://cf.osteopathic.org/cbms/cbms_central/examsched/examschedtbl.cfm?board_id=118346', 'Register Now')
+                    tr
+                      //- last conference - double the bottom padding
+                      td(class="padding" align="center" style="padding: 0px 0px 40px 0px;")
+                        table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="450")
+                          tr
+                            td(align="center" width="300" style="padding: 15px 0px 3px 0px; font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 18px; line-height: 28px;")
+                              | May 17, 2017 &bull; Rosemont, Illinois
+                          tr
+                            td(align="center" width="300" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;")
+                              | First application deadline: #[span(style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 16px; line-height: 26px;") Feb. 1, 2017]
+                          tr
+                            td(align="center" width="300" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;")
+                              | Final application deadline: #[span(style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 16px; line-height: 26px;") March 1, 2017]
+                          tr
+                            td(align="center" width="300" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;")
+                              +button('#466687', 'https://cf.osteopathic.org/cbms/cbms_central/examsched/examschedtbl.cfm?board_id=118346', 'Register Now')
 
 
+                    tr
+                      td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" )
+                        | Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+
+        tr
+          td(align="center")
+            include ./includes/v1/footer
+                        
+        tr
+          td(style="padding: 0px 0px 36px 0px;")

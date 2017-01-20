@@ -1,3 +1,42 @@
+###First go-round
+AOBEM  
+AOBIM  
+AOBFP  
+AOBS   
+Sports Medicine  
+AOBD  
+AOBNMM  
+AOBPa  
+AOBP  
+AOBPMR  
+AOBPr  
+AOBR  
+
+#Variations
+
+###Per batch
+board  
+board_friendly  
+board_url  
+board_phone  
+board_email  
+
+
+###Per individual
+#####Direct
+email  
+last_name  
+expiration  
+specialty  
+
+#####Derived
+name ("Dr. [last_name]" | "Diplomate")  
+eligibility_years (from [expiration_date])  
+
+
+
+
+
 * [Good Copy • Email copy from great companies](http://www.goodemailcopy.com/)
 
 * [Email Templates | MailChimp](https://mailchimp.com/features/email-templates/)
@@ -22,3 +61,4 @@
 >  
 > Bud
  
+

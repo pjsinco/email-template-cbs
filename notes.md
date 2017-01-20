@@ -62,3 +62,5 @@ eligibility_years (from [expiration_date])
 > Bud
  
 
+#####Fri Jan 20 15:19:38 2017 CST
+* [The Ultimate Guide to Sending Email in Laravel | Scotch](https://scotch.io/tutorials/ultimate-guide-on-sending-email-in-laravel)

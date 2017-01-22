@@ -1,3 +1,40 @@
+#Boards
+AOBEM
+American Osteopathic Board of Emergency Medicine
+
+AOBIM
+American Osteopathic Board of Internal Medicine
+
+AOBFP
+American Osteopathic Board of Family Physicians
+
+AOBS 
+American Osteopathic Board of Surgery
+
+Sports Medicine
+American Osteopathic Conjoint Sports Medicine Examination Committee
+
+AOBD
+American Osteopathic Board of Dermatology
+
+AOBNMM
+American Osteopathic Board of Neuromusculoskeletal Medicine
+
+AOBPa
+American Osteopathic Board of Pathology
+
+AOBP
+American Osteopathic Board of Pediatrics
+
+AOBPMR
+American Osteopathic Board of Physical Medicine and Rehabilitation
+
+AOBPr
+American Osteopathic Board of Proctology
+
+AOBR
+American Osteopathic Board of Radiology
+
 ###First go-round
 AOBEM  
 AOBIM  

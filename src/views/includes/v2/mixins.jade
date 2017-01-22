@@ -1,3 +1,5 @@
+include ./../data.jade
+
 mixin button(color, url, text)
   // BUTTON
   table(width="100%" border="0" cellspacing="0" cellpadding="0")
@@ -8,10 +10,30 @@ mixin button(color, url, text)
             td(align="center")
               a(class="body-text" href="#{url}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; background-color: #{color}; border-top: 5px solid #{color}; border-bottom: 5px solid #{color}; border-left: 20px solid #{color}; border-right: 20px solid #{color}; display: inline-block; border-radius: 20px;") #{text}
 
-mixin salutation(color, lastName)
+mixin logo(board)
+  - var name = boards[board].name
+  - var boardFriendly = boards[board].friendly
+  - var boardUrl = boards[board].boardUrl
+  - var src = boards[board].logoSrc
+  - var width = boards[board].logoW
+  - var height = boards[board].logoH
+  table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;")
+    tr
+      td(align="center")
+        table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="600")
+          tr
+            td(align="center" style="padding: 10px 10px 10px 10px;")
+              table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="100%")
+                tr
+                  td(align="center" style="padding: 15px 0px 15px 0px;")
+                    a(href="#{boardUrl}" style="font-family: Helvetica, arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 26px; color: #666666; text-decoration: none;" target="_blank")
+                      img(class="fluid-image" border="0" src="#{src}" alt="#{boardFriendly} logo" width="#{width}" height="#{height}" style="display: block; padding: 0; color: #ffffff; font-family: Helvetica, arial, sans-serif; font-size: 16px;")
+
+
+mixin salutation(color, name)
   tr
     td(class="padding" align="left" style="padding: 22px 0px 22px 0px; font-family: Helvetica, Arial, sans-serif; color: #{color}; font-weight: bold; font-size: 21px; line-height: 28px;" )
-      | Dear Dr. #{lastName},
+      | Dear #{name},
 
 
 mixin graf(text)
@@ -24,7 +46,7 @@ mixin exam(color, textColor, date, location, firstDeadline, lastDeadline, link, 
     td(class="padding" align="center" style="padding: 0px 0px 40px 0px;")
       table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="320" style="border: 1px solid #{color}; border-radius: 4px; border-collapse: separate !important;")
         tr
-          td(align="center" width="300" style="padding: 6px 0px 6px 0px; font-family: Helvetica, Arial, sans-serif; color: #{textColor}; font-weight: bold; font-size: 16px; line-height: 28px;" bgcolor=color)
+          td(align="center" width="300" style="padding: 6px 10px 6px 10px; font-family: Helvetica, Arial, sans-serif; color: #{textColor}; font-weight: bold; font-size: 16px; line-height: 23px;" bgcolor=color)
             | #{date} &bull; #{location}
         tr
           td(align="center" width="300" style="padding: 30px 0px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #a2a2a2; font-weight: light; font-size: 13px; line-height: 18px; text-transform: uppercase; letter-spacing: 1px")
@@ -42,3 +64,47 @@ mixin exam(color, textColor, date, location, firstDeadline, lastDeadline, link, 
           td(align="center" width="300" style="padding: 10px 0px 20px 0px; font-family: Helvetica, Arial, sans-serif; color: #[color]; font-weight: normal; font-size: 16px; line-height: 26px;")
             +button(buttonColor, link, buttonText)
   
+mixin close(board)
+  - var boardName = boards[board].name
+  - var boardFriendly = boards[board].friendly
+  - var boardUrl = boards[board].boardUrl
+  - var email = boards[board].email
+  - var phone = boards[board].phone
+  - var address = boards[board].address
+  tr
+    td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" )
+      | For more information about the OCC exam or any of the requirements, please visit #[a(href="#{boardUrl}" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;" target="_blank") the website of the #{boardName}]. 
+  tr
+    td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" ) Please contact the #{boardFriendly} at #{phone} or #[a(href="mailto:#{email}" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;" target="_blank") #{email}] for specific questions.
+
+mixin footer(board)
+  - var boardName = boards[board].name
+  - var boardFriendly = boards[board].friendly
+  - var boardUrl = boards[board].boardUrl
+  - var email = boards[board].email
+  - var phone = boards[board].phone
+  - var address = boards[board].address
+  // FOOTER
+  // container table
+  table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;")
+    tr
+      td(align="center")
+        // wrapper table
+        table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="600")
+          tr
+            td(align="center" style="padding: 20px 10px 20px 10px;")
+              // content table
+              table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="100%")
+                tr
+                  td(class="body-text" align="center")
+                    | #[a(href="#{boardUrl}" class="appleFooter" style="font-family: Helvetica, arial, sans-serif; font-weight: bold; font-size: 14px; line-height: 21px; color: #466687; text-decoration: none;" target="_blank") #{boardName}]
+                tr
+                  td(class="body-text" align="center" style="font-family: Helvetica, arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 21px; color: #666666;")
+                    | #[span(class="appleFooter" style="color: #666666; font-weight: normal;") #{address}]
+                tr
+                  td(class="body-text" align="center" style="font-family: Helvetica, arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 21px; color: #666666;")
+                    | #[span(class="appleFooter" style="color: #666666; font-weight: normal;") #{phone}]
+                tr
+                  td(class="body-text" align="center" style="font-family: Helvetica, arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 21px; color: #666666;")
+                    | #[span(class="appleFooter" style="color: #666666; font-weight: normal;") Questions? Email #[a(href="mailto:#{email}" style="text-decoration: underline; color: #666666; font-weight: normal;" target="_blank") #{email}]]
+

@@ -1,4 +1,3 @@
-include ./includes/data
 include ./includes/v2/mixins
 
 // CONTAINER FOR EMAIL
@@ -11,23 +10,7 @@ table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layou
       table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="600")
         tr
           td
-
-            // 
-            table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;")
-              tr
-                td(align="center")
-
-                  // wrapper table
-                  table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="600")
-                    tr
-                      td(align="center" style="padding: 10px 10px 10px 10px;")
-
-                        // content 
-                        table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="100%")
-                          tr
-                            td(align="center" style="padding: 15px 0px 15px 0px;")
-                              a(href="http://www.aobr.org" style="font-family: Helvetica, arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 26px; color: #666666; text-decoration: none;" target="_blank")
-                                img(class="fluid-image" border="0" src="http://aoa-mnews.informz.net/aoa-mnews/data/images/cbs/logo-aobr.png" alt="AOBR logo" width="384" height="59" style="display: block; padding: 0; color: #ffffff; font-family: Helvetica, arial, sans-serif; font-size: 16px;")
+            +logo('aobem')
 
         include ./includes/v2/banner
 
@@ -39,13 +22,13 @@ table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layou
                 td(class="padding" align="center" bgcolor="#ffffff" style="padding: 14px 0px 12px 0px;")
                   // wrapper
                   table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="520")
-                    +salutation('#466687', 'Sundstrom')
+                    +salutation('#466687', '%%name%%')
                     tr
                       td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" )
                         | Thank you for being board certified by the American Osteopathic Association.
                     tr
                       td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" )
-                        | Please be advised that your Board Certification in Neuroradiology will expire on December 31, 2019.
+                        | Please be advised that your Board Certification in %%specialty%% will expire %%expiration_ap%%.
                     tr
                       td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" )
                         | You must complete the following requirements to maintain your board certfication:
@@ -66,10 +49,10 @@ table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layou
                             td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" valign="top" width="20")
                               | 3. 
                             td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" valign="top")
-                              | #[span(style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 16px; line-height: 26px;") Pass the OCC exam.] You are eligible to take the exam in 2017, 2018 and 2019.
+                              | #[span(style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 16px; line-height: 26px;") Pass the OCC exam.] You are eligible to take the exam in %%years%%.
 
                     tr
-                      td(align="center" width="300" style="padding: 10px 0px 20px 0px; font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: 200; font-size: 16px; line-height: 26px; text-transform: uppercase; letter-spacing: 1px;")
+                      td(class="padding" align="center" width="300" style="padding: 10px 0px 20px 0px; font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: 200; font-size: 16px; line-height: 26px; text-transform: uppercase; letter-spacing: 1px;")
                         | Your OCC exam dates in 2017
                     +exam('#f1f2f2', '#466687', 'April 3, 2017', 'Las Vegas', 'Feb 1. 2017', 'March 1, 2017', 'https://cf.osteopathic.org/cbms/cbms_central/examsched/examschedtbl.cfm?board_id=118346', '#466687', 'Apply Now')
                     +exam('#f1f2f2', '#466687', 'May 17, 2017', 'Rosemont, Illinois', 'Feb 1. 2017', 'March 1, 2017', 'https://cf.osteopathic.org/cbms/cbms_central/examsched/examschedtbl.cfm?board_id=118346', '#466687', 'Apply Now')
@@ -81,7 +64,7 @@ table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layou
                             td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" valign="top" width="20")
                               | 4. 
                             td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" valign="top")
-                              | #[span(style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 16px; line-height: 26px;") Complete Component 4] #[a(href="https://physicianportal.osteopathic.org/" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;" target="_blank") Practice Performance Assessment activity].
+                              | #[span(style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 16px; line-height: 26px;") Complete Component 4] #[a(href="https://physicianportal.osteopathic.org/FiveComponents" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;" target="_blank") Practice Performance Assessment activity].
                     tr
                       td(class="padding")
                         table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="100%")
@@ -90,14 +73,10 @@ table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layou
                               | 5. 
                             td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" valign="top")
                               | #[span(style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 16px; line-height: 26px;") Maintain active AOA membership] (will be verified once other components are complete).
-                    tr
-                      td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" )
-                        | For more information about the OCC exam or any of the requirements, please visit #[a(href="http://www.aobr.org/" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;" target="_blank") the website of the American Osteopathic Board of Radiology]. 
-                    tr
-                      td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" ) Please contact the AOBR at (800) 621-1773, ext. 8072, or #[a(href="mailto:aobr@osteopathic.org" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;" target="_blank") aobr@osteopathic.org] for specific questions.
+                    +close('aobem')
+
         tr
           td(align="center")
-            include ./includes/v2/footer
-                        
+            +footer('aobem')
         tr
           td(style="padding: 0px 0px 36px 0px;")

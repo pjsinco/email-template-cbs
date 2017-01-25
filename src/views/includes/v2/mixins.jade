@@ -4,7 +4,7 @@ mixin button(color, url, text)
   // BUTTON
   table(width="100%" border="0" cellspacing="0" cellpadding="0")
     tr
-      td(align="center" style="padding: 15px 0px 0px 0px;")
+      td(align="center" style="padding: 10px 0px 0px 0px;")
         table(width="100%" border="0" cellspacing="0" cellpadding="0")
           tr
             td(align="center")
@@ -27,7 +27,7 @@ mixin logo(board)
                 tr
                   td(align="center" style="padding: 15px 0px 15px 0px;")
                     a(href="#{boardUrl}" style="font-family: Helvetica, arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 26px; color: #666666; text-decoration: none;" target="_blank")
-                      img(class="fluid-image" border="0" src="#{src}" alt="#{boardFriendly} logo" width="#{width}" height="#{height}" style="display: block; padding: 0; color: #ffffff; font-family: Helvetica, arial, sans-serif; font-size: 16px;")
+                      img(class="fluid-image" border="0" src="#{src}" alt="#{boardFriendly} logo" width="#{width}" height="#{height}" style="display: block; padding: 0; color: #466687; font-family: Helvetica, arial, sans-serif; font-size: 16px;")
 
 
 mixin salutation(color, name)
@@ -41,27 +41,43 @@ mixin graf(text)
     td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" )
       | #{text}
 
-mixin exam(color, textColor, date, location, firstDeadline, lastDeadline, link, buttonColor, buttonText)
+mixin exam(color, textColor, date, location, firstDeadline, finalDeadline, link, buttonColor, buttonText)
   tr
     td(class="padding" align="center" style="padding: 0px 0px 40px 0px;")
       table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="320" style="border: 1px solid #{color}; border-radius: 4px; border-collapse: separate !important;")
         tr
           td(align="center" width="300" style="padding: 6px 10px 6px 10px; font-family: Helvetica, Arial, sans-serif; color: #{textColor}; font-weight: bold; font-size: 16px; line-height: 23px;" bgcolor=color)
-            | #{date} &bull; #{location}
+            | #{date}
+        -var deadlineText = (finalDeadline ? 'First Application Deadline' : 'Application Deadline')
+        -var firstDeadlineDescription = (finalDeadline ? 'No late fee' : null)
+        -var cellPadding = (finalDeadline ? '0px 0px 10px 0px' : '0px 0px 0px 0px')
         tr
-          td(align="center" width="300" style="padding: 30px 0px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #a2a2a2; font-weight: light; font-size: 13px; line-height: 18px; text-transform: uppercase; letter-spacing: 1px")
-            | First application deadline
+          td(class="padding-sides-only" align="center" width="300" style="padding: 15px 0px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #{textColor}; font-weight: normal; font-size: 21px; line-height: 28px;")
+            | #{location}
         tr
-          td(align="center" width="300" style="padding: 0px 0px 10px 0px; font-family: Helvetica, Arial, sans-serif; color: #{textColor}; font-weight: normal; font-size: 16px; line-height: 26px;")
+          td(class="padding-sides-only" align="center" width="300" style="padding: 12px 0px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #a2a2a2; font-weight: light; font-size: 13px; line-height: 18px; text-transform: uppercase; letter-spacing: 1px")
+            | #{deadlineText}
+        if (firstDeadlineDescription)
+          tr
+            td(class="padding-sides-only" align="center" width="300" style="padding: 2px 0px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #a2a2a2; font-weight: light; font-size: 13px; line-height: 18px;")
+              | #{firstDeadlineDescription}
+        tr
+          td(class="padding-sides-only" align="center" width="300" style="padding: #{cellPadding}; font-family: Helvetica, Arial, sans-serif; color: #{textColor}; font-weight: normal; font-size: 16px; line-height: 26px;")
             | #{firstDeadline}
+
+        if (finalDeadline)
+          tr
+            td(class="padding-sides-only" align="center" width="300" style="padding: 0px 0px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #a2a2a2; font-weight: light; font-size: 13px; line-height: 18px; text-transform: uppercase; letter-spacing: 1px")
+              | Final application deadline
+          tr
+            td(class="padding-sides-only" align="center" width="300" style="padding: 2px 0px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #a2a2a2; font-weight: light; font-size: 13px; line-height: 18px;")
+              | With late fee
+          tr
+            td(class="padding-sides-only" align="center" width="300" style="font-family: Helvetica, Arial, sans-serif; color: #{textColor}; font-weight: normal; font-size: 16px; line-height: 26px;")
+              | #{finalDeadline}
+
         tr
-          td(align="center" width="300" style="padding: 10px 0px 0px 0px; font-family: Helvetica, Arial, sans-serif; color: #a2a2a2; font-weight: light; font-size: 13px; line-height: 18px; text-transform: uppercase; letter-spacing: 1px")
-            | Final application deadline
-        tr
-          td(align="center" width="300" style="font-family: Helvetica, Arial, sans-serif; color: #{textColor}; font-weight: normal; font-size: 16px; line-height: 26px;")
-            | #{lastDeadline}
-        tr
-          td(align="center" width="300" style="padding: 10px 0px 20px 0px; font-family: Helvetica, Arial, sans-serif; color: #[color]; font-weight: normal; font-size: 16px; line-height: 26px;")
+          td(class="padding-sides-only" align="center" width="300" style="padding: 0px 0px 20px 0px; font-family: Helvetica, Arial, sans-serif; color: #[color]; font-weight: normal; font-size: 16px; line-height: 26px;")
             +button(buttonColor, link, buttonText)
   
 mixin close(board)
@@ -75,7 +91,7 @@ mixin close(board)
     td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" )
       | For more information about the OCC exam or any of the requirements, please visit #[a(href="#{boardUrl}" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;" target="_blank") the website of the #{boardName}]. 
   tr
-    td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" ) Please contact the #{boardFriendly} at #{phone} or #[a(href="mailto:#{email}" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;" target="_blank") #{email}] for specific questions.
+    td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" ) Please contact the #{boardFriendly} at #{phone}, or #[a(href="mailto:#{email}" style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: normal; font-size: 16px; line-height: 26px;" target="_blank") #{email}] for specific questions.
 
 mixin footer(board)
   - var boardName = boards[board].name
@@ -107,4 +123,7 @@ mixin footer(board)
                 tr
                   td(class="body-text" align="center" style="font-family: Helvetica, arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 21px; color: #666666;")
                     | #[span(class="appleFooter" style="color: #666666; font-weight: normal;") Questions? Email #[a(href="mailto:#{email}" style="text-decoration: underline; color: #666666; font-weight: normal;" target="_blank") #{email}]]
+                tr
+                  td(class="body-text" align="center" style="padding-top: 20px; font-family: Helvetica, arial, sans-serif; font-weight: normal; font-size: 13px; line-height: 21px; color: #666666;")
+                    | #[a(class="appleFooter" href="http://aoa-mnews.informz.net/aoa-mnews/default.asp?action=u&amp;mi=%%MINSTANCEID%%&amp;email=%%EMAIL%%&amp;fid=2224" target="_blank" choice="12" style="font-family: Helvetica, arial, sans-serif; font-weight: normal; font-size: 14px; line-height: 21px; color: #666666;") Unsubscribe]
 

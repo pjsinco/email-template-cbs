@@ -1,6 +1,22 @@
 include ./includes/v2/mixins
 
+-var tags = {
+-  "informz": {
+-    "name": "%%name%%",
+-    "specialty": "%%specialty%%",
+-    "expiration": "%%expiration_ap%%",
+-    "years": "%%years%%",
+-  }, 
+-  "mailchimp": {
+-    "name"       : "*|NAME|*",
+-    "specialty"  : "*|SPECIALTY|*",
+-    "expiration" : "*|EXPIRATION|*",
+-    "years"      : "*|YEARS|*",
+-  }
+-}
+
 -var board = 'aobpr'
+-var vendor = 'informz'
 
 // CONTAINER FOR EMAIL
 table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;")
@@ -23,13 +39,13 @@ table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layou
                 td(class="padding" align="center" bgcolor="#ffffff" style="padding: 14px 0px 12px 0px;")
                   // wrapper
                   table(class="wrapper" border="0" cellpadding="0" cellspacing="0" width="520")
-                    +salutation('#466687', '%%name%%')
+                    +salutation('#466687', tags[vendor].name)
                     tr
                       td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" )
                         | Thank you for being board certified by the American Osteopathic Association.
                     tr
                       td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" )
-                        | Please be advised that your Board Certification in %%specialty%% will expire %%expiration_ap%%.
+                        | Please be advised that your Board Certification in #{tags[vendor].specialty} will expire #{tags[vendor].expiration}.
                     tr
                       td(class="padding" align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" )
                         | You must complete the following requirements to maintain your board certfication:
@@ -50,7 +66,7 @@ table(border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layou
                             td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" valign="top" width="20")
                               | 3. 
                             td( align="left" style="padding: 0px 0px 15px 0px; font-family: Helvetica, Arial, sans-serif; color: #717171; font-weight: normal; font-size: 16px; line-height: 26px;" valign="top")
-                              | #[span(style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 16px; line-height: 26px;") Pass the OCC exam.] You are eligible to take the exam in %%years%%.
+                              | #[span(style="font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: bold; font-size: 16px; line-height: 26px;") Pass the OCC exam.] You are eligible to take the exam in #{tags[vendor].years}.
 
                     tr
                       td(class="padding" align="center" width="300" style="padding: 10px 0px 20px 0px; font-family: Helvetica, Arial, sans-serif; color: #466687; font-weight: 200; font-size: 16px; line-height: 26px; text-transform: uppercase; letter-spacing: 1px;")

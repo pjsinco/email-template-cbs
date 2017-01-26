@@ -8,7 +8,7 @@ mixin button(color, url, text)
         table(width="100%" border="0" cellspacing="0" cellpadding="0")
           tr
             td(align="center")
-              a(class="body-text" href="#{url}" target="_blank" style="font-size: 13px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; background-color: #{color}; border-top: 5px solid #{color}; border-bottom: 5px solid #{color}; border-left: 20px solid #{color}; border-right: 20px solid #{color}; display: inline-block; border-radius: 20px;") #{text}
+              a(class="body-text" href="#{url}" target="_blank" style="padding: 0px 10px 0px 10px; font-size: 13px; line-height: 26px; font-family: Helvetica, Arial, sans-serif; font-weight: normal; color: #ffffff; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; background-color: #{color}; border-top: 5px solid #{color}; border-bottom: 5px solid #{color}; border-left: 20px solid #{color}; border-right: 20px solid #{color}; display: inline-block; border-radius: 20px;") #{text}
 
 mixin logo(board)
   - var name = boards[board].name
@@ -77,7 +77,7 @@ mixin exam(color, textColor, date, location, firstDeadline, finalDeadline, link,
               | #{finalDeadline}
 
         tr
-          td(class="padding-sides-only" align="center" width="300" style="padding: 0px 0px 20px 0px; font-family: Helvetica, Arial, sans-serif; color: #[color]; font-weight: normal; font-size: 16px; line-height: 26px;")
+          td(class="padding-sides-only" align="center" width="300" style="padding: 0px 0px 20px 0px; font-family: Helvetica, Arial, sans-serif; color: #{color}; font-weight: normal; font-size: 16px; line-height: 26px;")
             +button(buttonColor, link, buttonText)
   
 mixin close(board)

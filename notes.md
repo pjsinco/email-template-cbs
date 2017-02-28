@@ -1,3 +1,53 @@
+#Steps to Send an Email
+<hr>
+###1. List Prep
+* Open in Excel and save as tab-delimited txt
+    * Ex: ```cbs-expiration-aobim-im-primary-2017-02-27.txt```
+* Open in Textmate
+    * Add me as a recipient
+    * Add the board's administrator as a recipient
+    * Save with
+        * File Encoding: UTF8 
+        * Line Endings:  LF 
+* Verify correct formatting with ```csvlook``` on the command line
+    * ```csvlook -t <filename>```
+
+###2. Upload Subscriber List Informz
+* Upload the list to Informz
+    * ```Subscribers > Upload > Upload Subscribers```
+
+* Upload the file
+    * The Data Format should already exist.
+        * Ex. for expiration emails, the Data Format is ```cbs-expiration```
+    * Create a new interest, if needed
+        * Ex: ```cbs-aobem```
+        * Ex: ```cbs-aobim-im-primary```
+    * **"Replace existing subscribers" should be checked**
+
+###3. Create the Email
+* Ex. Name: ```cbs-expiration-aobim-im-primary-2017-02-27```
+* Template: "CBS - Blank"
+* Ex. To: ```Interests: cbs-aobim-im-primary```
+* Ex. From:
+      * Email Address: ```aobim@osteopathic.org```
+      * Friendly From: ```American Osteopathic Board of Internal Medicine```
+* Ex. Subject Line: ```Certification expiring```
+* Ex. Reply To: ```aobim@osteopathic.org```
+  
+
+###Create the Email
+* Run ```npm start``` to view the template in a browser
+* Update ```/src/views/index.jade```
+    * Set the board in the ```board``` variable
+    * Set the ```exam``` mixin
+    * **Verify that *Date* is correctly singular or plural** in "Your OCC Exam Date in 2017"
+* Using Chrome Dev Tools, copy the email
+    * Use "Copy OuterHTML" to copy the root table
+* Paste into the Informz email
+* Test and send
+
+
+
 #Boards
 AOBEM
 American Osteopathic Board of Emergency Medicine

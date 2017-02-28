@@ -1,11 +1,14 @@
 #Steps to Send an Email
 <hr>
 ###1. List Prep
-* Open in Excel and save as tab-delimited txt
+* Open in Excel and eyeball
+    * Every row should have a specialty
+* Save as tab-delimited txt
     * Ex: ```cbs-expiration-aobim-im-primary-2017-02-27.txt```
 * Open in Textmate
     * Add me as a recipient
     * Add the board's administrator as a recipient
+    * Remove the header row
     * Save with
         * File Encoding: UTF8 
         * Line Endings:  LF 
@@ -26,7 +29,7 @@
 
 ###3. Create the Email
 * Ex. Name: ```cbs-expiration-aobim-im-primary-2017-02-27```
-* Template: "CBS - Blank"
+* Template: ```CBS - Blank```
 * Ex. To: ```Interests: cbs-aobim-im-primary```
 * Ex. From:
       * Email Address: ```aobim@osteopathic.org```
